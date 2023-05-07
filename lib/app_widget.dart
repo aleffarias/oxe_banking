@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'login_page.dart';
+import 'package:oxe_banking/screens/login_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const LoginPage(),
+      home: const LoginScreen(),
     );
   }
 }
