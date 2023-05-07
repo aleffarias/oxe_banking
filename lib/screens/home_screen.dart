@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:oxe_banking/screens/loan/loan_screen.dart';
 
 import '../widget/CustomAppBar.dart';
 
 import 'account/account_screen.dart';
+import 'package:oxe_banking/screens/card/card_screen.dart';
+import 'package:oxe_banking/screens/loan/loan_screen.dart';
+import 'package:oxe_banking/screens/savings/savings_screen.dart';
 import 'package:oxe_banking/screens/transfer/transfer_screen.dart';
+import 'package:oxe_banking/screens/payments/payments_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -70,13 +73,32 @@ class HomeScreen extends StatelessWidget {
             _menuCard(
                 title: 'Pagamentos',
                 iconData: Icons.currency_exchange,
-                onTap: () {}),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PaymentsScreen()),
+                  );
+                }),
             _menuCard(
                 title: 'Poupança',
                 iconData: Icons.account_balance_wallet,
-                onTap: () {}),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SavingsScreen()),
+                  );
+                }),
             _menuCard(
-                title: 'Cartão', iconData: Icons.credit_card, onTap: () {}),
+                title: 'Cartão',
+                iconData: Icons.credit_card,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CardScreen()),
+                  );
+                }),
             _menuCard(
                 title: 'Investimento',
                 iconData: Icons.currency_exchange,

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:oxe_banking/widget/CustomAppBar.dart';
 
-class AccountScreen extends StatelessWidget {
-  const AccountScreen({Key? key}) : super(key: key);
+import '../../widget/CustomAppBar.dart';
 
-  Widget _menuOption({required String title, required IconData iconData}) {
+class PaymentsScreen extends StatelessWidget {
+  const PaymentsScreen({Key? key}) : super(key: key);
+
+  Widget _menuOption(
+      {required String title,
+      required IconData iconData,
+      required Function onTap}) {
     return InkWell(
       onTap: () {
         print('Clicou em $title');
@@ -32,25 +36,24 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          const CustomAppBar(title: 'Conta', automaticallyImplyLeading: true),
+      appBar: const CustomAppBar(
+          title: 'Pagamentos', automaticallyImplyLeading: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _menuOption(title: 'Abrir conta', iconData: Icons.add_box),
+              _menuOption(
+                  title: 'Gerar Boleto', iconData: Icons.qr_code, onTap: () {}),
               const Divider(),
               _menuOption(
-                  title: 'Ativar conta no dispositivo',
-                  iconData: Icons.device_hub),
-              const Divider(),
-              _menuOption(title: 'Perfil', iconData: Icons.person),
+                  title: 'Pagar Boleto', iconData: Icons.payment, onTap: () {}),
               const Divider(),
               _menuOption(
-                  title: 'Gerenciamento de senhas',
-                  iconData: Icons.lock_outline),
+                  title: 'Agendar Pagamento',
+                  iconData: Icons.schedule,
+                  onTap: () {}),
               const Divider(),
             ],
           ),

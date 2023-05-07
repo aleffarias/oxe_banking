@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../widget/CustomAppBar.dart';
 
-class LoanScreen extends StatelessWidget {
-  const LoanScreen({Key? key}) : super(key: key);
+class CardScreen extends StatelessWidget {
+  const CardScreen({Key? key}) : super(key: key);
 
   Widget _menuOption(
       {required String title,
@@ -36,8 +36,8 @@ class LoanScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-          title: 'Empréstimo', automaticallyImplyLeading: true),
+      appBar:
+          const CustomAppBar(title: 'Cartão', automaticallyImplyLeading: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -45,18 +45,28 @@ class LoanScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _menuOption(
-                  title: 'Simular empréstimo',
-                  iconData: Icons.calculate,
+                  title: 'Solicitar novo (crédito/débito)',
+                  iconData: Icons.credit_card,
                   onTap: () {}),
               const Divider(),
               _menuOption(
-                  title: 'Ver empréstimos do usuário',
-                  iconData: Icons.list_alt,
+                  title: 'Bloquear cartão',
+                  iconData: Icons.block,
                   onTap: () {}),
               const Divider(),
               _menuOption(
-                  title: 'Empréstimo pessoal',
-                  iconData: Icons.person,
+                  title: 'Criar cartão virtual',
+                  iconData: Icons.add_circle_outline,
+                  onTap: () {}),
+              const Divider(),
+              _menuOption(
+                  title: 'Remover cartão virtual',
+                  iconData: Icons.remove_circle_outline,
+                  onTap: () {}),
+              const Divider(),
+              _menuOption(
+                  title: 'Fatura (Ajustar limite, Pagar fatura)',
+                  iconData: Icons.receipt_long,
                   onTap: () {}),
               const Divider(),
             ],

@@ -45,12 +45,15 @@ class TransferScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _menuOption(title: 'PIX', iconData: Icons.flash_on, onTap: () {}),
+              const Divider(),
               _menuOption(
                   title: 'TED/DOC', iconData: Icons.swap_horiz, onTap: () {}),
+              const Divider(),
               _menuOption(
                   title: 'Receber Transferência',
                   iconData: Icons.download,
                   onTap: () {}),
+              const Divider(),
             ],
           ),
         ),
