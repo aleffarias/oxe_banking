@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:oxe_banking/screens/loan/loan_screen.dart';
 
 import '../widget/CustomAppBar.dart';
+
 import 'account/account_screen.dart';
+import 'package:oxe_banking/screens/transfer/transfer_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -46,11 +49,24 @@ class HomeScreen extends StatelessWidget {
             _menuCard(
                 title: 'Extrato', iconData: Icons.assignment, onTap: () {}),
             _menuCard(
-                title: 'Transferência', iconData: Icons.sync_alt, onTap: () {}),
+                title: 'Transferência',
+                iconData: Icons.sync_alt,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TransferScreen()),
+                  );
+                }),
             _menuCard(
                 title: 'Empréstimos',
                 iconData: Icons.monetization_on,
-                onTap: () {}),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoanScreen()),
+                  );
+                }),
             _menuCard(
                 title: 'Pagamentos',
                 iconData: Icons.currency_exchange,

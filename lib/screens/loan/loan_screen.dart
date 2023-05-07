@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:oxe_banking/widget/CustomAppBar.dart';
 
-class AccountScreen extends StatelessWidget {
-  const AccountScreen({Key? key}) : super(key: key);
+import '../../widget/CustomAppBar.dart';
 
-  Widget _menuOption({required String title, required IconData iconData}) {
+class LoanScreen extends StatelessWidget {
+  const LoanScreen({Key? key}) : super(key: key);
+
+  Widget _menuOption(
+      {required String title,
+      required IconData iconData,
+      required Function onTap}) {
     return InkWell(
       onTap: () {
         print('Clicou em $title');
@@ -32,22 +36,26 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          const CustomAppBar(title: 'Conta', automaticallyImplyLeading: true),
+      appBar: const CustomAppBar(
+          title: 'Empréstimo', automaticallyImplyLeading: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _menuOption(title: 'Abrir conta', iconData: Icons.add_box),
               _menuOption(
-                  title: 'Ativar conta no dispositivo',
-                  iconData: Icons.device_hub),
-              _menuOption(title: 'Perfil', iconData: Icons.person),
+                  title: 'Simular empréstimo',
+                  iconData: Icons.calculate,
+                  onTap: () {}),
               _menuOption(
-                  title: 'Gerenciamento de senhas',
-                  iconData: Icons.lock_outline),
+                  title: 'Ver empréstimos do usuário',
+                  iconData: Icons.list_alt,
+                  onTap: () {}),
+              _menuOption(
+                  title: 'Empréstimo pessoal',
+                  iconData: Icons.person,
+                  onTap: () {}),
             ],
           ),
         ),
